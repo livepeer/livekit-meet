@@ -104,15 +104,15 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
     <>
       <main className={styles.main} data-lk-theme="default">
         <div className="header">
-          <img src="/images/livekit-meet-home.svg" alt="LiveKit Meet" width="360" height="45" />
+          <h1 style={{textAlign: 'center'}}>Livepeer <> Livekit Demo</h1>
           <h2>
-            Open source video conferencing app built on{' '}
-            <a href="https://github.com/livekit/components-js?ref=meet" rel="noopener">
-              LiveKit&nbsp;Components
+            Open source video conferencing app built with{' '}
+            <a href="https://livepeer.org" rel="noopener">
+              Livepeer
             </a>
             ,{' '}
-            <a href="https://livekit.io/cloud?ref=meet" rel="noopener">
-              LiveKit&nbsp;Cloud
+            <a href="https://livekit.io" rel="noopener">
+              LiveKit
             </a>{' '}
             and Next.js.
           </h2>
