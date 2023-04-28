@@ -104,7 +104,7 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
     <>
       <main className={styles.main} data-lk-theme="default">
         <div className="header">
-          <h1 style={{ textAlign: "center" }}>Livepeer {"<>"} Livekit Demo</h1>
+          <h1 style={{ textAlign: "center" }}>Livepeer {"<>"} LiveKit Demo</h1>
           <h2>
             Open source video conferencing app built with{' '}
             <a href="https://livepeer.org" rel="noopener">
