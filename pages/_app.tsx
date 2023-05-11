@@ -42,12 +42,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           },
           {
             rel: 'apple-touch-icon',
-            href: '/images/livekit-apple-touch.png',
+            href: '/favicon.png',
             sizes: '180x180',
           },
           {
             rel: 'mask-icon',
-            href: '/images/livekit-safari-pinned-tab.svg',
+            href: '/favicon.png',
             color: '#070707',
           },
         ]}
