@@ -8,10 +8,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo
-        title="LiveKit Meet | Conference app build with LiveKit Open Source"
+        title="Livepeer Rooms"
         titleTemplate="%s"
-        defaultTitle="LiveKit Meet | Conference app build with LiveKit open source"
-        description="LiveKit is an open source WebRTC project that gives you everything needed to build scalable and real-time audio and/or video experiences in your applications."
+        defaultTitle="Livepeer Rooms"
+        description="Livepeer Rooms."
         twitter={{
           handle: '@livekitted',
           site: '@livekitted',
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               type: 'image/png',
             },
           ],
-          site_name: 'LiveKit Meet',
+          site_name: 'Livepeer Rooms',
         }}
         additionalMetaTags={[
           {
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         additionalLinkTags={[
           {
             rel: 'icon',
-            href: '/favicon.ico',
+            href: '/favicon.png',
           },
           {
             rel: 'apple-touch-icon',

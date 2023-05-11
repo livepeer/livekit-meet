@@ -7,10 +7,10 @@ export default function CustomRoomConnection() {
   const router = useRouter();
   const { liveKitUrl, token } = router.query;
   if (typeof liveKitUrl !== 'string') {
-    return <h2>Missing LiveKit URL</h2>;
+    return <h2>Missing URL</h2>;
   }
   if (typeof token !== 'string') {
-    return <h2>Missing LiveKit token</h2>;
+    return <h2>Missing token</h2>;
   }
 
   const roomOptions = {

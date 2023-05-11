@@ -24,7 +24,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>LiveKit Meet</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main data-lk-theme="default">
