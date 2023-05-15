@@ -1,5 +1,5 @@
 import { formatChatMessageLinks, LiveKitRoom, VideoConference } from '@livekit/components-react';
-import { LogLevel, VideoPresets, Room, RoomEvent } from 'livekit-client';
+import { LogLevel, VideoPresets, Room, RoomEvent, RemoteTrack, RemoteTrackPublication, RemoteParticipant } from 'livekit-client';
 import { useRouter } from 'next/router';
 import { DebugMode } from '../../lib/Debug';
 import React from 'react';
@@ -33,15 +33,15 @@ export default function CustomRoomConnection() {
     });
   }
 
-  const onPlaybackStatusChanged = React.useCallback((status) => {
+  const onPlaybackStatusChanged = React.useCallback((status: boolean) => {
     logTrackInfo()
     console.log('onPlaybackStatusChanged. status: ' + status)
   }, []);
-  const onTrackSubscribed = React.useCallback((track, publication, participant) => {
+  const onTrackSubscribed = React.useCallback((track: RemoteTrack, publication: RemoteTrackPublication, participant: RemoteParticipant) => {
     logTrackInfo()
     console.log('onTrackSubscribed.', 'track', track, 'participant', participant)
   }, [])
-  const onTrackUnSubscribed = React.useCallback((track, publication, participant) => {
+  const onTrackUnSubscribed = React.useCallback((track: RemoteTrack, publication: RemoteTrackPublication, participant: RemoteParticipant) => {
     logTrackInfo()
     console.log('onTrackUnSubscribed.', 'track', track, 'participant', participant)
   }, [])
@@ -53,7 +53,6 @@ export default function CustomRoomConnection() {
     return <h2>Missing token</h2>;
   }
 
-  myRoom.connect(liveKitUrl, token)
   myRoom
       .on(RoomEvent.AudioPlaybackStatusChanged, onPlaybackStatusChanged)
       .on(RoomEvent.TrackSubscribed, onTrackSubscribed)
@@ -62,7 +61,7 @@ export default function CustomRoomConnection() {
   return (
     <main data-lk-theme="default">
       {liveKitUrl && (
-        <LiveKitRoom room={myRoom} audio={true} video={true}>
+        <LiveKitRoom token={token} serverUrl={liveKitUrl} room={myRoom} audio={true} video={true}>
           <VideoConference chatMessageFormatter={formatChatMessageLinks} />
           <DebugMode logLevel={LogLevel.debug} />
         </LiveKitRoom>
